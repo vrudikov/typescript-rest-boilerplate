@@ -8,6 +8,11 @@ npm install
 npm start
 ```
 
+## Start project in cluster
+```
+npm start:cluster
+```
+
 ## Swagger Docs Generation
 
 ```
