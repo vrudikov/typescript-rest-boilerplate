@@ -1,7 +1,14 @@
 {
 	"basePath": "/",
 	"definitions": {},
-	"info": {},
+	"info": {
+		"description": "A Sample application using Typescipt-rest library",
+		"license": {
+			"name": "MIT"
+		},
+		"title": "Typescript-rest Boilerplate Application",
+		"version": "0.0.1"
+	},
 	"paths": {
 		"/hello/{name}": {
 			"get": {
@@ -31,5 +38,8 @@
 		}
 	},
 	"swagger": "2.0",
-	"securityDefinitions": {}
+	"securityDefinitions": {},
+	"produces": [
+		"application/json"
+	]
 }

@@ -8,19 +8,30 @@ npm install
 npm start
 ```
 
-# Swagger Docs Generation
+## Swagger Docs Generation
 
-### Swagger tool installation(global)
 ```
-npm install typescript-rest-swagger -g
-```
-
-### Usage
-```
-swaggerGen -c ./swagger-config.json
+npm run swaggerGen
 ```
 
-### Non-global Usage
+## Teste
+
 ```
-node ./node_modules/.bin/swaggerGen -c ./swagger-config.json
+npm run test
 ```
+
+### Test with coverage reports:
+
+```
+npm run test:coverage
+```
+
+The coverage report will be saved under ```./coverage``` folder.
+
+## Generate Docs
+
+```
+npm run doc
+```
+
+The project documentation will be saved under ```./doc``` folder.
