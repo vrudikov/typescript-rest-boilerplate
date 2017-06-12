@@ -3,6 +3,11 @@
 npm install
 ```
 
+# Project run
+```
+npm start
+```
+
 # Swagger Docs Generation
 
 ### Swagger tool installation(global)

@@ -4,6 +4,9 @@
   "description": "Boilerplate project for awesome typescript-rest library",
   "repository": "https://github.com/vrudikov/typescript-rest-boilerplate.git",
   "license": "MIT",
+  "scripts": {
+    "start": "./node_modules/.bin/ts-node src/index.ts"
+  },
   "dependencies": {
     "typescript-rest": "^1.0.4"
   },
