@@ -1,0 +1,24 @@
+basePath: /
+definitions: {}
+info: {}
+paths:
+    '/hello/{name}':
+        get:
+            operationId: HelloSayHello
+            produces:
+                - text/html
+            responses:
+                '200':
+                    description: Ok
+                    schema:
+                        type: string
+            description: ""
+            parameters:
+                -
+                    description: ""
+                    in: path
+                    name: name
+                    required: true
+                    type: string
+swagger: '2.0'
+securityDefinitions: {}

@@ -1,0 +1,13 @@
+{
+  "compileOnSave": true,
+  "compilerOptions": {
+    "module": "commonjs",
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "target": "es2016"
+  },
+  "include": [
+    "./server.ts",
+    "./**/*"
+  ]
+}

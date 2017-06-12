@@ -1,0 +1,16 @@
+{
+  "name": "typescript-rest-boilerplate",
+  "version": "0.0.1",
+  "description": "Boilerplate project for awesome typescript-rest library",
+  "repository": "https://github.com/vrudikov/typescript-rest-boilerplate.git",
+  "license": "MIT",
+  "dependencies": {
+    "typescript-rest": "^1.0.4"
+  },
+  "devDependencies": {
+    "ts-node": "~3.0.6",
+    "tslint": "~5.4.3",
+    "typescript": "~2.3.4",
+    "typescript-rest-swagger": "^0.0.7"
+  }
+}
