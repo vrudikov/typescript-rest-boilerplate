@@ -1,7 +1,7 @@
 import * as express from "express";
-import {Server} from "typescript-rest";
+import { Server } from "typescript-rest";
 import * as http from "http";
-import {HelloController} from "./controller/hello-controller";
+import { HelloController } from "./controller/hello-controller";
 
 export class ApiServer {
 

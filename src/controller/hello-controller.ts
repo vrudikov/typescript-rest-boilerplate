@@ -1,11 +1,17 @@
-import {GET, Path, PathParam} from "typescript-rest";
+import { GET, Path, PathParam } from 'typescript-rest';
 
-@Path("/hello")
+/**
+ * This is a demo opration to show how to use typescript-rest library.
+ */
+@Path('/hello')
 export class HelloController {
-
-    @Path(":name")
+    /**
+     * Send a greeting message.
+     * @param name The name that will receive our greeting message
+     */
+    @Path(':name')
     @GET
-    sayHello(@PathParam('name') name: string): string {
-        return "Hello " + name;
+    sayHello( @PathParam('name') name: string): string {
+        return 'Hello ' + name;
     }
 }

@@ -1,4 +1,9 @@
-import { ApiServer } from "./server";
+'use strict';
 
-let serverInst: any = new ApiServer();
-serverInst.start();
+import { start } from './start';
+
+start()
+    .catch((err) => {
+        console.error(`Error starting server: ${err.message}`);
+        process.exit(-1);
+    });
