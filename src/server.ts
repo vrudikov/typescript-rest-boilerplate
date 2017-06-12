@@ -1,7 +1,7 @@
 import * as express from "express";
 import { Server } from "typescript-rest";
 import * as http from "http";
-import { HelloController } from "./controller/hello-controller";
+import controllers from './controllers';
 
 export class ApiServer {
 
@@ -11,7 +11,7 @@ export class ApiServer {
 
     constructor() {
         this.app = express();
-        Server.buildServices(this.app, HelloController);
+        Server.buildServices(this.app, ...controllers);
         Server.swagger(this.app, './dist/swagger.json', '/api-docs', 'localhost:3000', ['http']);
         this.config();
     }
@@ -21,8 +21,8 @@ export class ApiServer {
      */
     private config(): void {
         // Native Express configuration
-        //this.app.use( bodyParser.urlencoded( { extended: false } ) );
-        //this.app.use( bodyParser.json( { limit: "1mb" } ) );
+        // this.app.use( bodyParser.urlencoded( { extended: false } ) );
+        // this.app.use( bodyParser.json( { limit: "1mb" } ) );
     }
 
     /**
@@ -30,7 +30,6 @@ export class ApiServer {
      * @returns {Promise<any>}
      */
     public start(): Promise<any> {
-
         return new Promise<any>((resolve, reject) => {
             this.server = this.app.listen(this.PORT, (err: any) => {
                 if (err) {

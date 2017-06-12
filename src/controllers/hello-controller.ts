@@ -1,7 +1,7 @@
 import { GET, Path, PathParam } from 'typescript-rest';
 
 /**
- * This is a demo opration to show how to use typescript-rest library.
+ * This is a demo operation to show how to use typescript-rest library.
  */
 @Path('/hello')
 export class HelloController {
