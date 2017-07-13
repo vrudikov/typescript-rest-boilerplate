@@ -1,7 +1,6 @@
-import * as express from "express";
-import { Server } from "typescript-rest";
-import * as http from "http";
-import controllers from './controllers';
+import * as express from 'express';
+import { Server } from 'typescript-rest';
+import * as http from 'http';
 
 export class ApiServer {
 
@@ -11,7 +10,7 @@ export class ApiServer {
 
     constructor() {
         this.app = express();
-        Server.buildServices(this.app, ...controllers);
+        Server.loadServices(this.app, 'controllers/*', __dirname);
         Server.swagger(this.app, './dist/swagger.json', '/api-docs', 'localhost:3000', ['http']);
         this.config();
     }
@@ -35,6 +34,7 @@ export class ApiServer {
                 if (err) {
                     return reject(err);
                 }
+                // tslint:disable-next-line:no-console
                 console.log(`Listening to http://${this.server.address().address}:${this.server.address().port}`);
                 return resolve();
             });
@@ -57,5 +57,4 @@ export class ApiServer {
             }
         });
     }
-
 }
