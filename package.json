@@ -19,10 +19,10 @@
     "doc": "typedoc --out ./doc/ --name 'Typescript-rest-Boilerplate' --readme ./README.MD --module commonjs --target ES6 --includeDeclarations --excludePrivate --excludeExternals ./src"
   },
   "dependencies": {
-    "typescript-rest": "^1.0.4"
+    "typescript-rest": "^1.1.0"
   },
   "devDependencies": {
-    "@types/chai": "^4.0.0",
+    "@types/chai": "^4.0.1",
     "@types/mocha": "^2.2.41",
     "@types/request": "0.0.43",
     "chai": "^3.5.0",
