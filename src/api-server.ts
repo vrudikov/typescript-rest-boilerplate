@@ -2,7 +2,6 @@ import * as express from 'express';
 import { Server } from 'typescript-rest';
 import * as http from 'http';
 import * as path from 'path';
-import controllers from './controllers';
 
 export class ApiServer {
 
@@ -12,9 +11,7 @@ export class ApiServer {
 
     constructor() {
         this.app = express();
-        Server.buildServices(this.app, ...controllers);
-        // TODO: enable for Swagger generation error
-        // Server.loadServices(this.app, 'controllers/*', __dirname);
+        Server.loadServices(this.app, 'controllers/*', __dirname);
         Server.swagger(this.app, './dist/swagger.json', '/api-docs', 'localhost:3000', ['http']);
         this.config();
     }
