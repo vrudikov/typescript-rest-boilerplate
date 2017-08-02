@@ -3,7 +3,7 @@
 import 'mocha';
 import * as chai from 'chai';
 import * as request from 'request';
-import { ApiServer } from '../src/server';
+import { ApiServer } from '../src/api-server';
 import {Server, HttpMethod} from 'typescript-rest';
 
 const expect = chai.expect;

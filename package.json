@@ -19,16 +19,17 @@
     "doc": "typedoc --out ./doc/ --name 'Typescript-rest-Boilerplate' --readme ./README.MD --module commonjs --target ES6 --includeDeclarations --excludePrivate --excludeExternals ./src"
   },
   "dependencies": {
-    "typescript-rest": "^1.1.0"
+    "typescript-rest": "^1.1.0",
+    "typescript-rest-swagger": "^0.0.7"
   },
   "devDependencies": {
-    "@types/chai": "^4.0.1",
+    "@types/chai": "^4.0.2",
     "@types/mocha": "^2.2.41",
     "@types/request": "0.0.43",
     "chai": "^3.5.0",
     "cross-env": "^4.0.0",
     "istanbul": "^0.4.5",
-    "mocha": "^3.4.2",
+    "mocha": "^3.5.0",
     "nyc": "^10.3.2",
     "request": "^2.81.0",
     "rimraf": "^2.6.1",
@@ -37,8 +38,7 @@
     "tslint": "~5.4.3",
     "typedoc": "^0.5.10",
     "typescript": "~2.3.4",
-    "typescript-formatter": "^5.2.0",
-    "typescript-rest-swagger": "^0.0.7"
+    "typescript-formatter": "^5.2.0"
   },
   "nyc": {
     "include": [

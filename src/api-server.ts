@@ -1,16 +1,20 @@
 import * as express from 'express';
 import { Server } from 'typescript-rest';
 import * as http from 'http';
+import * as path from 'path';
+import controllers from './controllers';
 
 export class ApiServer {
 
-    public app: express.Application;
-    public server: http.Server = null;
+    private app: express.Application;
+    private server: http.Server = null;
     public PORT: number = process.env.PORT || 3000;
 
     constructor() {
         this.app = express();
-        Server.loadServices(this.app, 'controllers/*', __dirname);
+        Server.buildServices(this.app, ...controllers);
+        // TODO: enable for Swagger generation error
+        // Server.loadServices(this.app, 'controllers/*', __dirname);
         Server.swagger(this.app, './dist/swagger.json', '/api-docs', 'localhost:3000', ['http']);
         this.config();
     }
@@ -21,7 +25,8 @@ export class ApiServer {
     private config(): void {
         // Native Express configuration
         // this.app.use( bodyParser.urlencoded( { extended: false } ) );
-        // this.app.use( bodyParser.json( { limit: "1mb" } ) );
+        // this.app.use( bodyParser.json( { limit: '1mb' } ) );
+        this.app.use(express.static(path.join(__dirname, 'public'), { maxAge: 31557600000 }));
     }
 
     /**
@@ -57,4 +62,5 @@ export class ApiServer {
             }
         });
     }
+
 }
