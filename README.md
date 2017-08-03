@@ -16,10 +16,10 @@ npm start:cluster
 ## Swagger Docs Generation
 
 ```
-npm run swaggerGen
+npm run swagger
 ```
 
-## Teste
+## Test
 
 ```
 npm run test
