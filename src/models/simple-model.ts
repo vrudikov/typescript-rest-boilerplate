@@ -8,3 +8,7 @@ export class SimpleHello {
         this.greeting = title;
     }
 }
+
+export type SimpleHelloType = {
+    greeting: string;
+};
