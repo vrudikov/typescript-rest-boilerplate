@@ -9,7 +9,7 @@ export class ApiServer {
 
     private app: express.Application;
     private server: http.Server = null;
-    public PORT: number = process.env.PORT || 3000;
+    public PORT: number = +process.env.PORT || 3000;
 
     constructor() {
         this.app = express();

@@ -26,10 +26,10 @@ describe('Hello Controller Tests', () => {
         it('should provide a catalog containing the exposed paths', () => {
             expect(Server.getPaths()).to.include.members([
                 '/hello/:name',
-                '/hello-object/:name',
+                '/hello-objects/:name',
             ]);
             expect(Server.getHttpMethods('/hello/:name')).to.have.members([HttpMethod.GET]);
-            expect(Server.getHttpMethods('/hello-object/:name')).to.have.members([HttpMethod.GET]);
+            expect(Server.getHttpMethods('/hello-objects/:name')).to.have.members([HttpMethod.GET]);
         });
     });
 
@@ -53,9 +53,9 @@ describe('Hello Controller Tests', () => {
         });
     });
 
-    describe('/hello-object/:name', () => {
+    describe('/hello-objects/:name', () => {
         it('should return the object with field "name" informed for GET requests', (done) => {
-            helloRequest('/hello-object/joe', (error: any, response, body) => {
+            helloRequest('/hello-objects/joe', (error: any, response, body) => {
                 expect(response.statusCode).to.eq(200);
                 expect(JSON.parse(body)).to.eql({greeting:'joe'});
                 done();
@@ -65,7 +65,7 @@ describe('Hello Controller Tests', () => {
         it('should return 405 for POST requests', (done) => {
             helloRequest.post({
                 body: 'joe',
-                url: '/hello-object/joe'
+                url: '/hello-objects/joe'
             }, (error, response, body) => {
                 expect(response.statusCode).to.eq(405);
                 done();
