@@ -15,7 +15,9 @@ export class ApiServer {
         this.app = express();
         this.config();
 
+        Server.useIoC();
         Server.buildServices(this.app, ...controllers);
+
         // TODO: enable for Swagger generation error
         // Server.loadServices(this.app, 'controllers/*', __dirname);
         Server.swagger(this.app, './dist/swagger.json', '/api-docs', 'localhost:3000', ['http']);

@@ -19,6 +19,7 @@
     "doc": "typedoc --out ./doc/ --name 'Typescript-rest-Boilerplate' --readme ./README.MD --module commonjs --target ES6 --includeDeclarations --excludePrivate --excludeExternals ./src"
   },
   "dependencies": {
+    "typescript-ioc": "^1.0.2",
     "typescript-rest": "^1.1.1",
     "typescript-rest-swagger": "0.0.10"
   },
