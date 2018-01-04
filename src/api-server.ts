@@ -9,13 +9,15 @@ export class ApiServer {
 
     private app: express.Application;
     private server: http.Server = null;
-    public PORT: number = process.env.PORT || 3000;
+    public PORT: number = +process.env.PORT || 3000;
 
     constructor() {
         this.app = express();
         this.config();
 
+        Server.useIoC();
         Server.buildServices(this.app, ...controllers);
+
         // TODO: enable for Swagger generation error
         // Server.loadServices(this.app, 'controllers/*', __dirname);
         Server.swagger(this.app, './dist/swagger.json', '/api-docs', 'localhost:3000', ['http']);

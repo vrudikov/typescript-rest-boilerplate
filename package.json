@@ -11,14 +11,15 @@
     "clean": "rimraf dist",
     "lint": "tslint ./src/**/*.ts ./test/**/*.ts",
     "format": "tsfmt -r",
-    "pretest": "cross-env NODE_ENV=test npm build && npm run lint",
+    "pretest": "cross-env NODE_ENV=test npm run build && npm run lint",
     "test": "cross-env NODE_ENV=test mocha",
-    "test:coverage": "nyc npm test",
+    "test:coverage": "nyc npm run test",
     "swagger": "swaggerGen -c ./swagger.config.json",
     "tsc": "tsc",
     "doc": "typedoc --out ./doc/ --name 'Typescript-rest-Boilerplate' --readme ./README.MD --module commonjs --target ES6 --includeDeclarations --excludePrivate --excludeExternals ./src"
   },
   "dependencies": {
+    "typescript-ioc": "^1.0.2",
     "typescript-rest": "^1.1.1",
     "typescript-rest-swagger": "0.0.10"
   },
