@@ -27,6 +27,12 @@
 npm install
 ```
 
+## Swagger Docs Generation
+
+```
+npm run swagger
+```
+
 # Project run
 ```
 npm start
@@ -35,12 +41,6 @@ npm start
 ## Start project in cluster
 ```
 npm start:cluster
-```
-
-## Swagger Docs Generation
-
-```
-npm run swagger
 ```
 
 ## Test
