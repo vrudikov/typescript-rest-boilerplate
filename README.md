@@ -1,5 +1,5 @@
 # TODO
-- JWT tokens for security
+- JWT tokens for security. Try to integrate typescript-rest-jwt(https://github.com/jacob-ebey/typescript-rest-jwt). Issue-proposal(https://github.com/thiagobustamante/typescript-rest/issues/43)
 - Decorator role-based security. Scopes: controller and method.
     We could work with JWT tokens. Decrypt token, take authorities from token
     and check if user has an authority
