@@ -1,6 +1,6 @@
 'use strict';
 
-import 'mocha';
+import {describe, before, after, it} from 'mocha';
 import * as chai from 'chai';
 import * as request from 'request';
 import { ApiServer } from '../src/api-server';
