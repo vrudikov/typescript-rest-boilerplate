@@ -19,28 +19,29 @@
     "doc": "typedoc --out ./doc/ --name 'Typescript-rest-Boilerplate' --readme ./README.MD --module commonjs --target ES6 --includeDeclarations --excludePrivate --excludeExternals ./src"
   },
   "dependencies": {
-    "typescript-ioc": "^1.0.2",
-    "typescript-rest": "^1.1.1",
-    "typescript-rest-swagger": "0.0.10"
+    "typescript-ioc": "1.2.4",
+    "typescript-rest": "1.6.1",
+    "typescript-rest-swagger": "0.0.19"
   },
   "devDependencies": {
-    "@types/chai": "^4.0.2",
-    "@types/mocha": "^2.2.41",
-    "@types/request": "0.0.43",
-    "@types/cors": "^2.8.1",
-    "chai": "^3.5.0",
-    "cross-env": "^4.0.0",
-    "istanbul": "^0.4.5",
-    "mocha": "^3.5.0",
-    "nyc": "^10.3.2",
-    "request": "^2.81.0",
-    "rimraf": "^2.6.1",
-    "source-map-support": "^0.4.15",
-    "ts-node": "~3.0.6",
-    "tslint": "~5.4.3",
-    "typedoc": "^0.5.10",
-    "typescript": "~2.3.4",
-    "typescript-formatter": "^5.2.0"
+    "@types/chai": "4.1.4",
+    "@types/cors": "2.8.4",
+    "@types/mocha": "5.2.3",
+    "@types/request": "2.47.1",
+    "@types/express": "4.16.0",
+    "chai": "4.1.2",
+    "cross-env": "5.2.0",
+    "istanbul": "0.4.5",
+    "mocha": "5.2.0",
+    "nyc": "13.0.0",
+    "request": "2.87.0",
+    "rimraf": "2.6.2",
+    "source-map-support": "0.5.6",
+    "ts-node": "7.0.0",
+    "tslint": "5.10.0",
+    "typedoc": "0.11.1",
+    "typescript": "2.9.2",
+    "typescript-formatter": "7.2.2"
   },
   "nyc": {
     "include": [

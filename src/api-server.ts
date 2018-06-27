@@ -7,7 +7,7 @@ import controllers from './controllers';
 
 export class ApiServer {
 
-    private app: express.Application;
+    private readonly app: express.Application;
     private server: http.Server = null;
     public PORT: number = +process.env.PORT || 3000;
 
@@ -44,8 +44,11 @@ export class ApiServer {
                 if (err) {
                     return reject(err);
                 }
+
+                // TODO: replace with Morgan call
                 // tslint:disable-next-line:no-console
                 console.log(`Listening to http://${this.server.address().address}:${this.server.address().port}`);
+
                 return resolve();
             });
         });
