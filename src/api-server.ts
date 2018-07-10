@@ -4,6 +4,7 @@ import * as http from 'http';
 import * as path from 'path';
 import * as cors from 'cors';
 import controllers from './controllers';
+import {AddressInfo} from "net";
 
 export class ApiServer {
 
@@ -44,11 +45,10 @@ export class ApiServer {
                 if (err) {
                     return reject(err);
                 }
-
+                const address = this.server.address() as AddressInfo;
                 // TODO: replace with Morgan call
                 // tslint:disable-next-line:no-console
-                console.log(`Listening to http://${this.server.address().address}:${this.server.address().port}`);
-
+                console.log(`Listening to http://localhost:${address.port}`);
                 return resolve();
             });
         });
