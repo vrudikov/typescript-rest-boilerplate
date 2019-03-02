@@ -2,21 +2,25 @@ import * as express from 'express';
 import { Server } from 'typescript-rest';
 import * as http from 'http';
 import * as path from 'path';
+import * as cors from 'cors';
 import controllers from './controllers';
 
 export class ApiServer {
 
-    private app: express.Application;
+    private readonly app: express.Application;
     private server: http.Server = null;
-    public PORT: number = process.env.PORT || 3000;
+    public PORT: number = +process.env.PORT || 3000;
 
     constructor() {
         this.app = express();
+        this.config();
+
+        Server.useIoC();
         Server.buildServices(this.app, ...controllers);
+
         // TODO: enable for Swagger generation error
         // Server.loadServices(this.app, 'controllers/*', __dirname);
         Server.swagger(this.app, './dist/swagger.json', '/api-docs', 'localhost:3000', ['http']);
-        this.config();
     }
 
     /**
@@ -27,6 +31,7 @@ export class ApiServer {
         // this.app.use( bodyParser.urlencoded( { extended: false } ) );
         // this.app.use( bodyParser.json( { limit: '1mb' } ) );
         this.app.use(express.static(path.join(__dirname, 'public'), { maxAge: 31557600000 }));
+        this.app.use(cors());
     }
 
     /**
@@ -39,8 +44,11 @@ export class ApiServer {
                 if (err) {
                     return reject(err);
                 }
+
+                // TODO: replace with Morgan call
                 // tslint:disable-next-line:no-console
                 console.log(`Listening to http://${this.server.address().address}:${this.server.address().port}`);
+
                 return resolve();
             });
         });
