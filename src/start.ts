@@ -6,8 +6,8 @@ export const start = (): Promise<void> => {
     return new Promise<void>((resolve, reject) => {
         const apiServer = new ApiServer();
         apiServer.start()
-                .then(resolve)
-                .catch(reject);
+            .then(resolve)
+            .catch(reject);
 
         const graceful = () => {
             apiServer.stop().then(() => process.exit(0));

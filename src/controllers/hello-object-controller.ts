@@ -12,7 +12,7 @@ export class HelloObjectController {
      * @return Array<SimpleHello> simple array of objects
      */
     @GET
-    sayArrayObjectHello(): Array<SimpleHello> {
+    public sayArrayObjectHello(): Array<SimpleHello> {
         return [
             new SimpleHello('1'),
             new SimpleHello('2')
@@ -26,7 +26,7 @@ export class HelloObjectController {
      */
     @Path(':name/types')
     @GET
-    saySimpleHelloTypes(@PathParam('name') name: string): Array<SimpleHelloType> {
+    public saySimpleHelloTypes(@PathParam('name') name: string): Array<SimpleHelloType> {
         return [
             new SimpleHello(name + '1'),
             new SimpleHello(name + '2')
@@ -41,7 +41,7 @@ export class HelloObjectController {
      */
     @Path(':name/types/:typeName')
     @GET
-    saySimpleHelloType(@PathParam('name') name: string, @PathParam('typeName') typeName: string): SimpleHelloType {
+    public saySimpleHelloType(@PathParam('name') name: string, @PathParam('typeName') typeName: string): SimpleHelloType {
         return new SimpleHello(name + '_' + typeName);
     }
 
@@ -52,7 +52,7 @@ export class HelloObjectController {
      */
     @Path(':name')
     @GET
-    sayObjectHello(@PathParam('name') name: string): SimpleHello {
+    public sayObjectHello(@PathParam('name') name: string): SimpleHello {
         return new SimpleHello(name);
     }
 
@@ -63,7 +63,7 @@ export class HelloObjectController {
      */
     @Path(':name/promises')
     @GET
-    sayArrayObjectPromiseHello(@PathParam('name') name: string): Promise<Array<SimpleHello>> {
+    public sayArrayObjectPromiseHello(@PathParam('name') name: string): Promise<Array<SimpleHello>> {
         return new Promise((resolve, reject) => {
             resolve([
                 new SimpleHello(name + '1'),
@@ -80,7 +80,7 @@ export class HelloObjectController {
      */
     @Path(':name/promises/:promiseName')
     @GET
-    sayObjectPromiseHello(@PathParam('name') name: string, @PathParam('promiseName') promiseName: string): Promise<SimpleHello> {
+    public sayObjectPromiseHello(@PathParam('name') name: string, @PathParam('promiseName') promiseName: string): Promise<SimpleHello> {
         return new Promise((resolve, reject) => {
             resolve(new SimpleHello(name + '_' + promiseName));
         });

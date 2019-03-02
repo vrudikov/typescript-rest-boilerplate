@@ -1,5 +1,5 @@
-import { GET, Path, PathParam } from 'typescript-rest';
 import { Inject } from 'typescript-ioc';
+import { GET, Path, PathParam } from 'typescript-rest';
 
 import { HelloServiceBase, IocHelloService } from './ioc-services';
 
@@ -18,7 +18,7 @@ export class HelloIocDirectController {
    */
   @Path(':name')
   @GET
-  sayHello( @PathParam('name') name: string) {
+  public sayHello( @PathParam('name') name: string) {
     return this.injectedService.sayHello(name);
   }
 }
@@ -41,7 +41,7 @@ export class HelloIocInterfaceController {
    */
   @Path(':name')
   @GET
-  sayHello( @PathParam('name') name: string) {
+  public sayHello( @PathParam('name') name: string) {
     return this.injectedService.sayHello(name);
   }
 }

@@ -1,15 +1,15 @@
+import * as cors from 'cors';
 import * as express from 'express';
-import { Server } from 'typescript-rest';
 import * as http from 'http';
 import * as path from 'path';
-import * as cors from 'cors';
+import { Server } from 'typescript-rest';
 import controllers from './controllers';
 
 export class ApiServer {
+    public PORT: number = +process.env.PORT || 3000;
 
     private readonly app: express.Application;
     private server: http.Server = null;
-    public PORT: number = +process.env.PORT || 3000;
 
     constructor() {
         this.app = express();
@@ -20,18 +20,7 @@ export class ApiServer {
 
         // TODO: enable for Swagger generation error
         // Server.loadServices(this.app, 'controllers/*', __dirname);
-        Server.swagger(this.app, './dist/swagger.json', '/api-docs', 'localhost:3000', ['http']);
-    }
-
-    /**
-     * Configure the express app.
-     */
-    private config(): void {
-        // Native Express configuration
-        // this.app.use( bodyParser.urlencoded( { extended: false } ) );
-        // this.app.use( bodyParser.json( { limit: '1mb' } ) );
-        this.app.use(express.static(path.join(__dirname, 'public'), { maxAge: 31557600000 }));
-        this.app.use(cors());
+        Server.swagger(this.app, { filePath: './dist/swagger.json' });
     }
 
     /**
@@ -47,7 +36,7 @@ export class ApiServer {
 
                 // TODO: replace with Morgan call
                 // tslint:disable-next-line:no-console
-                console.log(`Listening to http://${this.server.address().address}:${this.server.address().port}`);
+                console.log(`Listening to http://127.0.0.1:${this.PORT}`);
 
                 return resolve();
             });
@@ -71,4 +60,14 @@ export class ApiServer {
         });
     }
 
+    /**
+     * Configure the express app.
+     */
+    private config(): void {
+        // Native Express configuration
+        // this.app.use( bodyParser.urlencoded( { extended: false } ) );
+        // this.app.use( bodyParser.json( { limit: '1mb' } ) );
+        this.app.use(express.static(path.join(__dirname, 'public'), { maxAge: 31557600000 }));
+        this.app.use(cors());
+    }
 }

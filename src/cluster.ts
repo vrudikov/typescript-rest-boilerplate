@@ -13,18 +13,18 @@ if (cluster.isMaster) {
     for (let i = 0; i < n; i++) {
         const env = { processNumber: i + 1 };
         const worker = cluster.fork(env);
-        (<any>worker).process['env'] = env;
+        (worker as any).process['env'] = env;
     }
 
-    cluster.on('online', function(worker) {
-        console.log(`Child process running PID: ${worker.process.pid} PROCESS_NUMBER: ${(<any>worker).process['env'].processNumber}`);
+    cluster.on('online', function (worker) {
+        console.log(`Child process running PID: ${worker.process.pid} PROCESS_NUMBER: ${(worker as any).process['env'].processNumber}`);
     });
 
-    cluster.on('exit', function(worker, code, signal) {
+    cluster.on('exit', function (worker, code, signal) {
         console.log(`PID ${worker.process.pid}  code: ${code}  signal: ${signal}`);
-        const env = (<any>worker).process['env'];
+        const env = (worker as any).process['env'];
         const newWorker = cluster.fork(env);
-        (<any>newWorker).process['env'] = env;
+        (newWorker as any).process['env'] = env;
     });
 } else {
     start()
@@ -34,6 +34,6 @@ if (cluster.isMaster) {
         });
 }
 
-process.on('uncaughtException', function(err: any) {
+process.on('uncaughtException', function (err: any) {
     console.log(err);
 });

@@ -2,13 +2,13 @@
  * Simple model class
  */
 export class SimpleHello {
-    greeting: string;
+    public greeting: string;
 
     constructor(title: string) {
         this.greeting = title;
     }
 }
 
-export type SimpleHelloType = {
+export interface SimpleHelloType {
     greeting: string;
-};
+}
