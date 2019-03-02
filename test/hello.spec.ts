@@ -1,10 +1,10 @@
 'use strict';
 
-import {describe, before, after, it} from 'mocha';
 import * as chai from 'chai';
+import {after, before, describe, it} from 'mocha';
 import * as request from 'request';
+import {HttpMethod, Server} from 'typescript-rest';
 import { ApiServer } from '../src/api-server';
-import {Server, HttpMethod} from 'typescript-rest';
 
 const expect = chai.expect;
 

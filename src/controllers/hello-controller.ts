@@ -11,7 +11,7 @@ export class HelloController {
      */
     @Path(':name')
     @GET
-    sayHello(@PathParam('name') name: string): string {
+    public sayHello(@PathParam('name') name: string): string {
         return 'Hello ' + name;
     }
 }

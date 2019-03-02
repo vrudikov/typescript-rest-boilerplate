@@ -4,7 +4,7 @@ import { Provides } from 'typescript-ioc';
  * To be used as an "interface", in case you want to be able to use different implementations.
  */
 export abstract class HelloServiceBase {
-  abstract sayHello(name: string): string;
+  public abstract sayHello(name: string): string;
 }
 
 /**
@@ -12,7 +12,7 @@ export abstract class HelloServiceBase {
  */
 @Provides(HelloServiceBase)
 export class HelloServiceImpl implements HelloServiceBase {
-  sayHello(name: string): string {
+  public sayHello(name: string): string {
     return 'Hi ' + name + '!';
   }
 }
@@ -21,7 +21,7 @@ export class HelloServiceImpl implements HelloServiceBase {
  * To be directly injected.
  */
 export class IocHelloService {
-  sayHello(name: string) {
+  public sayHello(name: string) {
     return 'Hello, ' + name;
   }
 }
