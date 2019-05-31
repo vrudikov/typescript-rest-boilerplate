@@ -1,10 +1,10 @@
-import { Provides } from 'typescript-ioc';
+import {Provides} from 'typescript-ioc';
 
 /**
  * To be used as an "interface", in case you want to be able to use different implementations.
  */
 export abstract class HelloServiceBase {
-  public abstract sayHello(name: string): string;
+    public abstract sayHello(name: string): string;
 }
 
 /**
@@ -12,16 +12,16 @@ export abstract class HelloServiceBase {
  */
 @Provides(HelloServiceBase)
 export class HelloServiceImpl implements HelloServiceBase {
-  public sayHello(name: string): string {
-    return 'Hi ' + name + '!';
-  }
+    public sayHello(name: string): string {
+        return 'Hi ' + name + '!';
+    }
 }
 
 /**
  * To be directly injected.
  */
 export class IocHelloService {
-  public sayHello(name: string) {
-    return 'Hello, ' + name;
-  }
+    public sayHello(name: string) {
+        return 'Hello, ' + name;
+    }
 }

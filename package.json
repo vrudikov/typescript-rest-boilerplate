@@ -18,29 +18,34 @@
     "tsc": "tsc"
   },
   "dependencies": {
-    "cors": "^2.8.5",
-    "typescript-ioc": "^1.2.5",
-    "typescript-rest": "^2.0.0",
-    "typescript-rest-swagger": "^0.0.23"
+    "cors": "2.8.5",
+    "typescript-ioc": "1.2.5",
+    "typescript-rest": "2.0.1",
+    "typescript-rest-swagger": "0.1.0",
+    "dotenv": "8.0.0",
+    "mongoose": "5.5.11"
   },
   "devDependencies": {
     "@types/chai": "4.1.7",
-    "@types/cors": "2.8.4",
-    "@types/mocha": "5.2.5",
+    "@types/cors": "2.8.5",
+    "@types/mocha": "5.2.7",
     "@types/request": "2.48.1",
-    "@types/express": "4.16.0",
+    "@types/express": "4.16.1",
+    "@types/mongodb": "3.1.27",
+    "@types/mongoose": "5.5.3",
+    "@types/dotenv": "6.1.1",
     "chai": "4.2.0",
     "cross-env": "5.2.0",
     "istanbul": "0.4.5",
-    "mocha": "5.2.0",
-    "nyc": "^13.3.0",
-    "request": "2.87.0",
+    "mocha": "6.1.4",
+    "nyc": "14.1.1",
+    "request": "2.88.0",
     "rimraf": "2.6.3",
-    "source-map-support": "0.5.9",
-    "ts-node": "7.0.1",
-    "tslint": "5.12.0",
-    "tslint-config-prettier": "^1.17.0",
-    "typescript": "3.2.2"
+    "source-map-support": "0.5.12",
+    "ts-node": "8.2.0",
+    "tslint": "5.17.0",
+    "tslint-config-prettier": "1.18.0",
+    "typescript": "3.5.1"
   },
   "nyc": {
     "include": [
