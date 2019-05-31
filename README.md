@@ -1,6 +1,9 @@
 # TODO
-- JWT tokens for security. Use new [security decorator](https://github.com/thiagobustamante/typescript-rest/wiki/@Security-Decorator)
 - MongoDB connection example. I have implementation, need to push here
+
+# Features
+- Decorator based API. Throw away your boilerplate code :hooray
+- JWT tokens for security. See [security decorator](https://github.com/thiagobustamante/typescript-rest/wiki/@Security-Decorator)
 
 # Initial setup
 ```
