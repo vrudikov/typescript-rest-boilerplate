@@ -1,4 +1,4 @@
-import dotenv from 'dotenv';
+import {config} from 'dotenv';
 import * as mongoose from 'mongoose';
 import {Connection, ConnectionOptions} from 'mongoose';
 
@@ -12,10 +12,10 @@ export class MongoConnector {
         /**
          * Load environment variables from .env file, where API keys and passwords are configured.
          */
-        dotenv.config({path: '.env'});
+        config({path: '.env'});
 
-        (mongoose as any).Promise = require('bluebird');
-        // (<any>mongoose).Promise = global.Promise;
+        // (mongoose as any).Promise = require('bluebird');
+        (mongoose as any).Promise = global.Promise;
     }
 
     /**

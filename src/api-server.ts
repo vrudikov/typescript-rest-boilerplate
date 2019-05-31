@@ -1,8 +1,9 @@
 import * as cors from 'cors';
 import * as express from 'express';
 import * as http from 'http';
+import morgan = require("morgan");
 import * as path from 'path';
-import { Server } from 'typescript-rest';
+import {Server} from 'typescript-rest';
 import controllers from './controllers';
 
 export class ApiServer {
@@ -20,7 +21,7 @@ export class ApiServer {
 
         // TODO: enable for Swagger generation error
         // Server.loadServices(this.app, 'controllers/*', __dirname);
-        Server.swagger(this.app, { filePath: './dist/swagger.json' });
+        Server.swagger(this.app, {filePath: './dist/swagger.json'});
     }
 
     /**
@@ -67,7 +68,8 @@ export class ApiServer {
         // Native Express configuration
         // this.app.use( bodyParser.urlencoded( { extended: false } ) );
         // this.app.use( bodyParser.json( { limit: '1mb' } ) );
-        this.app.use(express.static(path.join(__dirname, 'public'), { maxAge: 31557600000 }));
+        this.app.use(express.static(path.join(__dirname, 'public'), {maxAge: 31557600000}));
         this.app.use(cors());
+        this.app.use(morgan('combined'));
     }
 }

@@ -23,7 +23,8 @@
     "typescript-rest": "2.0.1",
     "typescript-rest-swagger": "0.1.0",
     "dotenv": "8.0.0",
-    "mongoose": "5.5.11"
+    "mongoose": "5.5.11",
+    "morgan": "1.9.1"
   },
   "devDependencies": {
     "@types/chai": "4.1.7",
@@ -34,6 +35,7 @@
     "@types/mongodb": "3.1.27",
     "@types/mongoose": "5.5.3",
     "@types/dotenv": "6.1.1",
+    "@types/morgan": "1.7.35",
     "chai": "4.2.0",
     "cross-env": "5.2.0",
     "istanbul": "0.4.5",
