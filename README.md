@@ -1,9 +1,8 @@
-# TODO
-- MongoDB connection example. Use `MongoConnector`
-
 # Features
-- cluster bootstrap out of the box
 - Decorator based API. Throw away your boilerplate code :hooray
+- Сluster bootstrap out of the box
+- `morgan` for logging
+- MongoDB connector
 - JWT tokens for security. See [security decorator](https://github.com/thiagobustamante/typescript-rest/wiki/@Security-Decorator)
 
 # Initial setup

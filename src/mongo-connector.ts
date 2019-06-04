@@ -14,8 +14,8 @@ export class MongoConnector {
          */
         config({path: '.env'});
 
-        // (mongoose as any).Promise = require('bluebird');
         (mongoose as any).Promise = global.Promise;
+        // (mongoose as any).Promise = require('bluebird');
     }
 
     /**
@@ -49,7 +49,7 @@ export class MongoConnector {
 
             const options: ConnectionOptions = {
                 keepAlive: true,
-                useMongoClient: true,
+                useNewUrlParser: true
                 // promiseLibrary: require('bluebird')
             };
             this.mongoConnection = mongoose.connection;
@@ -58,6 +58,7 @@ export class MongoConnector {
                 const db = indexOfA !== -1 ?
                     process.env.MONGODB_URI.substring(0, 10) + '!_:_!' + process.env.MONGODB_URI.substring(indexOfA) :
                     process.env.MONGODB_URI;
+                // tslint:disable-next-line:no-console
                 console.log('MongoDB connected [%s]', db);
                 resolve();
             }).catch(reject);
@@ -70,19 +71,5 @@ export class MongoConnector {
      */
     public disconnect(): Promise<any> {
         return this.mongoConnection.close();
-    }
-
-    private initializeConnection() {
-        const options = {
-            server: {socketOptions: {keepAlive: 1}},
-            // promiseLibrary: require('bluebird')
-        };
-        this.mongoConnection = mongoose.connect(process.env.MONGODB_URI, options).connection;
-        this.mongoConnection
-            .on('error', console.log)
-            .on('disconnected', this.initializeConnection)
-            .once('open', () => {
-                console.log(`Connected to MongoDB server ${process.env.MONGODB_URI}`);
-            });
     }
 }

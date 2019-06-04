@@ -1,5 +1,5 @@
 import {GET, Path, PathParam} from 'typescript-rest';
-import {SimpleHello, SimpleHelloType} from '../models/simple-model';
+import {SimpleHello, SimpleHelloType} from '../model/simple-model';
 
 /**
  * This is a demo operation to show how to use typescript-rest library.

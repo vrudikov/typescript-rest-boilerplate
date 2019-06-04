@@ -4,7 +4,7 @@ import * as http from 'http';
 import morgan = require("morgan");
 import * as path from 'path';
 import {Server} from 'typescript-rest';
-import controllers from './controllers';
+import controllers from './controller';
 
 export class ApiServer {
     public PORT: number = +process.env.PORT || 3000;
