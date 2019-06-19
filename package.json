@@ -14,14 +14,15 @@
     "pretest": "cross-env NODE_ENV=test npm run build && npm run lint",
     "test": "cross-env NODE_ENV=test mocha --exit",
     "test:coverage": "nyc npm run test",
-    "swagger": "swaggerGen -c ./swagger.config.json",
+    "swagger": "swaggerGen -c ./swagger.config.yml",
     "tsc": "tsc"
   },
   "dependencies": {
     "cors": "^2.8.5",
+    "express": "^4.17.1",
     "typescript-ioc": "^1.2.5",
     "typescript-rest": "^2.2.0",
-    "typescript-rest-swagger": "^0.0.23"
+    "typescript-rest-swagger": "^1.0.3"
   },
   "devDependencies": {
     "@types/chai": "4.1.7",

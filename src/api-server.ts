@@ -3,7 +3,6 @@ import * as express from 'express';
 import * as http from 'http';
 import * as path from 'path';
 import { Server } from 'typescript-rest';
-import controllers from './controllers';
 
 export class ApiServer {
     public PORT: number = +process.env.PORT || 3000;
@@ -16,18 +15,15 @@ export class ApiServer {
         this.config();
 
         Server.useIoC();
-        Server.buildServices(this.app, ...controllers);
 
-        // TODO: enable for Swagger generation error
-        // Server.loadServices(this.app, 'controllers/*', __dirname);
+        Server.loadServices(this.app, 'controllers/*', __dirname);
         Server.swagger(this.app, { filePath: './dist/swagger.json' });
     }
 
     /**
      * Start the server
-     * @returns {Promise<any>}
      */
-    public start(): Promise<any> {
+    public async start() {
         return new Promise<any>((resolve, reject) => {
             this.server = this.app.listen(this.PORT, (err: any) => {
                 if (err) {
@@ -48,8 +44,8 @@ export class ApiServer {
      * Stop the server (if running).
      * @returns {Promise<boolean>}
      */
-    public stop(): Promise<boolean> {
-        return new Promise<boolean>((resolve, reject) => {
+    public async stop(): Promise<boolean> {
+        return new Promise<boolean>((resolve) => {
             if (this.server) {
                 this.server.close(() => {
                     return resolve(true);
@@ -65,8 +61,6 @@ export class ApiServer {
      */
     private config(): void {
         // Native Express configuration
-        // this.app.use( bodyParser.urlencoded( { extended: false } ) );
-        // this.app.use( bodyParser.json( { limit: '1mb' } ) );
         this.app.use(express.static(path.join(__dirname, 'public'), { maxAge: 31557600000 }));
         this.app.use(cors());
     }
