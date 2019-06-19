@@ -1,6 +1,9 @@
-# TODO
-- JWT tokens for security. Use new [security decorator](https://github.com/thiagobustamante/typescript-rest/wiki/@Security-Decorator)
-- MongoDB connection example. I have implementation, need to push here
+# Features
+- Decorator based API. Throw away your boilerplate code :hooray
+- Сluster bootstrap out of the box
+- `morgan` for logging
+- MongoDB connector
+- JWT tokens for security. See [security decorator](https://github.com/thiagobustamante/typescript-rest/wiki/@Security-Decorator)
 
 # Initial setup
 ```
@@ -22,6 +25,9 @@ npm start
 ```
 npm start:cluster
 ```
+
+## UI Test
+Just go to http://127.0.0.1:3000
 
 ## Test
 

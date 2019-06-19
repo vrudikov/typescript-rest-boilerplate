@@ -3,8 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <title>API Test</title>
+    <script
+            src="http://code.jquery.com/jquery-3.3.1.min.js"
+            integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+            crossorigin="anonymous"></script>
 </head>
 <body>
-<h1>API TEST. Angular 4 App soon...</h1>
+<h1>Test API</h1>
+<h3>Hello Controller</h3>
+<ul>
+    <li>
+        <button id="test-simple-hello" type="button">Hello</button>
+    </li>
+</ul>
+
+<h3>Hello Objects Controller</h3>
+<ul>
+    <li>
+        <button id="test-objects-hello" type="button">Hello Objects</button>
+    </li>
+    <li>
+        <button id="test-object-hello" type="button">Hello Object</button>
+    </li>
+</ul>
+
+<script>
+    $('#test-simple-hello').click(function () {
+        $.get('/hello/testname', function (data) {
+            alert(data);
+        });
+    });
+
+    $('#test-objects-hello').click(function () {
+        $.get('/hello-objects', function (data) {
+            alert(JSON.stringify(data));
+        });
+    });
+
+    $('#test-object-hello').click(function () {
+        $.get('/hello-objects/testname', function (data) {
+            alert(JSON.stringify(data));
+        });
+    });
+</script>
 </body>
 </html>
