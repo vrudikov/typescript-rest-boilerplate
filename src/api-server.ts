@@ -4,6 +4,7 @@ import * as http from 'http';
 import * as morgan from 'morgan';
 import * as path from 'path';
 import { Server } from 'typescript-rest';
+import controllers from './controller';
 
 export class ApiServer {
     public PORT: number = +process.env.PORT || 3000;
@@ -17,7 +18,8 @@ export class ApiServer {
 
         Server.useIoC();
 
-        Server.loadServices(this.app, 'controllers/*', __dirname);
+        Server.buildServices(this.app, ...controllers);
+        // Server.loadServices(this.app, 'controllers/*', __dirname);
         Server.swagger(this.app, { filePath: './dist/swagger.json' });
     }
 

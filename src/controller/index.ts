@@ -1,7 +1,7 @@
+import {HelloServiceBase, HelloServiceImpl, IocHelloService} from '../service/ioc-services';
 import {HelloController} from './hello-controller';
 import {HelloIocDirectController, HelloIocInterfaceController} from './hello-ioc-controller';
 import {HelloObjectController} from './hello-object-controller';
-import {HelloServiceBase, HelloServiceImpl, IocHelloService} from './ioc-services';
 
 export default [
     HelloController,

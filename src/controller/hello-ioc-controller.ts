@@ -1,7 +1,7 @@
 import {Inject} from 'typescript-ioc';
 import {GET, Path, PathParam} from 'typescript-rest';
 
-import {HelloServiceBase, IocHelloService} from './ioc-services';
+import {HelloServiceBase, IocHelloService} from '../service/ioc-services';
 
 /**
  * These are demo operations to show how to use typescript-rest library with typescript-ioc.

@@ -2,3 +2,11 @@ version: '3.1'
 services:
   mongo:
     image: mongo:latest
+    ports:
+      - 27017:27017
+  typescript-rest-boilerplate:
+    image: typescript-rest-boilerplate:latest
+    environment:
+      MONGODB_URI: mongodb://mongo:27017/db
+    ports:
+      - 3000:3000
