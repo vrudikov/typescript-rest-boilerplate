@@ -9,8 +9,8 @@ export async function start(): Promise<void> {
     await apiServer.start();
     await mongoConnector.connect();
     const graceful = async () => {
-        await apiServer.stop();
         await mongoConnector.disconnect();
+        await apiServer.stop();
         process.exit(0);
     };
 

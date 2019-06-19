@@ -26,6 +26,11 @@ npm start
 npm start:cluster
 ```
 
+## Docker build and run
+```
+build.sh
+```
+
 ## UI Test
 Just go to http://127.0.0.1:3000
 

@@ -6,6 +6,7 @@
   "license": "MIT",
   "scripts": {
     "start": "./node_modules/.bin/ts-node src/index.ts",
+    "start:in:docker": "node dist/index.js",
     "start:cluster": "./node_modules/.bin/ts-node src/cluster.ts",
     "build": "npm run clean && tsc && npm run swagger",
     "clean": "rimraf dist",
