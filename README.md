@@ -29,6 +29,7 @@ npm start:cluster
 ## Docker build and run
 ```
 build.sh
+docker-compose up -d
 ```
 
 ## UI Test
