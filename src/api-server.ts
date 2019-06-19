@@ -1,6 +1,7 @@
 import * as cors from 'cors';
 import * as express from 'express';
 import * as http from 'http';
+import * as morgan from 'morgan';
 import * as path from 'path';
 import { Server } from 'typescript-rest';
 
@@ -63,5 +64,6 @@ export class ApiServer {
         // Native Express configuration
         this.app.use(express.static(path.join(__dirname, 'public'), { maxAge: 31557600000 }));
         this.app.use(cors());
+        this.app.use(morgan('combined'));
     }
 }

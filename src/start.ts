@@ -1,12 +1,17 @@
 'use strict';
 
 import { ApiServer } from './api-server';
+import { MongoConnector } from "./mongo-connector";
 
 export async function start(): Promise<void> {
+    const mongoConnector = new MongoConnector();
     const apiServer = new ApiServer();
     await apiServer.start();
-    const graceful = () => {
-        apiServer.stop().then(() => process.exit(0));
+    await mongoConnector.connect();
+    const graceful = async () => {
+        await apiServer.stop();
+        await mongoConnector.disconnect();
+        process.exit(0);
     };
 
     // Stop graceful
