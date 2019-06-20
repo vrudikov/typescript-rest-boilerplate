@@ -59,6 +59,7 @@ export class MongoConnector {
                     process.env.MONGODB_URI.substring(0, 10) + '!_:_!' + process.env.MONGODB_URI.substring(indexOfA) :
                     process.env.MONGODB_URI;
                 // tslint:disable-next-line:no-console
+                // TODO: winston
                 console.log('MongoDB connected [%s]', db);
                 resolve();
             }).catch(reject);
