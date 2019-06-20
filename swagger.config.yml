@@ -1,7 +1,7 @@
 swagger:
   outputDirectory: ./dist
   entryFile: 
-    - ./src/controllers/*
+    - ./src/controller/*
   outputFormat: OpenApi_3
   name: Typescript-rest Boilerplate Application
   description: A Sample application using Typescipt-rest library
