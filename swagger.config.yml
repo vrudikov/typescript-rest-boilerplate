@@ -8,3 +8,12 @@ swagger:
   license: MIT
   produces: [application/json]
   version: 0.0.1
+  securityDefinitions:
+    default:
+      type: apiKey
+      in: header
+      name: Authorization
+    secondAuthenticator:
+      type: apiKey
+      in: header
+      name: Authorization
