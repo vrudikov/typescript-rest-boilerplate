@@ -5,6 +5,7 @@
   "repository": "https://github.com/vrudikov/typescript-rest-boilerplate.git",
   "license": "MIT",
   "scripts": {
+    "tsc": "tsc",
     "start": "./node_modules/.bin/ts-node src/index.ts",
     "start:in:docker": "node dist/index.js",
     "start:cluster": "./node_modules/.bin/ts-node src/cluster.ts",
@@ -15,8 +16,7 @@
     "pretest": "cross-env NODE_ENV=test npm run build && npm run lint",
     "test": "cross-env NODE_ENV=test mocha --exit",
     "test:coverage": "nyc npm run test",
-    "swagger": "swaggerGen -c ./swagger.config.yml",
-    "tsc": "tsc"
+    "swagger": "swaggerGen -c ./swagger.config.yml"
   },
   "dependencies": {
     "cors": "^2.8.5",

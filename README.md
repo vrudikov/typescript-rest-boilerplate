@@ -28,7 +28,7 @@ npm start:cluster
 
 ## Docker build and run
 ```
-build.sh
+npm run build
 docker-compose up -d
 ```
 

@@ -1,7 +1,7 @@
 {
   "compileOnSave": true,
   "compilerOptions": {
-    "declaration": true,
+    "declaration": false,
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
     "module": "commonjs",
@@ -14,7 +14,7 @@
     "noUnusedLocals": true,
     "outDir": "dist",
     "skipLibCheck": true,
-    "sourceMap": true,
+    "sourceMap": false,
     "strictNullChecks": false,
     "target": "es2016"
   },
