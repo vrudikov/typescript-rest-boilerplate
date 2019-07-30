@@ -1,5 +1,5 @@
-import { GET, Path, PathParam } from 'typescript-rest';
-import { SimpleHello, SimpleHelloType } from '../model/simple-model';
+import {GET, Path, PathParam} from 'typescript-rest';
+import {SimpleHello, SimpleHelloType} from '../model/simple-model';
 
 /**
  * This is a demo operation to show how to use typescript-rest library.
@@ -41,7 +41,8 @@ export class HelloObjectController {
      */
     @Path(':name/types/:typeName')
     @GET
-    public saySimpleHelloType(@PathParam('name') name: string, @PathParam('typeName') typeName: string): SimpleHelloType {
+    public saySimpleHelloType(@PathParam('name') name: string,
+                              @PathParam('typeName') typeName: string): SimpleHelloType {
         return new SimpleHello(name + '_' + typeName);
     }
 
@@ -80,7 +81,8 @@ export class HelloObjectController {
      */
     @Path(':name/promises/:promiseName')
     @GET
-    public sayObjectPromiseHello(@PathParam('name') name: string, @PathParam('promiseName') promiseName: string): Promise<SimpleHello> {
+    public sayObjectPromiseHello(@PathParam('name') name: string,
+                                 @PathParam('promiseName') promiseName: string): Promise<SimpleHello> {
         return new Promise((resolve, reject) => {
             resolve(new SimpleHello(name + '_' + promiseName));
         });

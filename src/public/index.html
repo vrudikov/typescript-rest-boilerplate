@@ -27,6 +27,16 @@
     </li>
 </ul>
 
+<h3>Hello Admins Controller</h3>
+<ul>
+    <li>
+        <button id="test-admins-get" type="button">Get all Admins(MongoDB)</button>
+    </li>
+    <li>
+        <button id="test-admins-create" type="button">Create an Admin(MongoDB)</button>
+    </li>
+</ul>
+
 <script>
     $('#test-simple-hello').click(function () {
         $.get('/hello/testname', function (data) {
@@ -44,6 +54,22 @@
         $.get('/hello-objects/testname', function (data) {
             alert(JSON.stringify(data));
         });
+    });
+
+    $('#test-admins-get').click(function () {
+        $.get('/hello-admins', function (data) {
+            alert(JSON.stringify(data));
+        });
+    });
+
+    $('#test-admins-create').click(function () {
+        $.post('/hello-admins', {
+            name: "root",
+            email: "root@admin.com",
+            role: "test"
+        }, function (data) {
+            alert(JSON.stringify(data));
+        }, "json");
     });
 </script>
 </body>
