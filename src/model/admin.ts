@@ -1,7 +1,9 @@
 import * as mongoose from 'mongoose';
 import { Model } from 'mongoose';
 
-export type AdminModel = mongoose.Document & {
+type AdminType = AdminModel & mongoose.Document; 
+
+export interface AdminModel {
     name: string;
     email: string;
     password: string;
@@ -17,5 +19,5 @@ const AdminSchema = new mongoose.Schema({
     role: String
 }, {timestamps: true});
 
-const Admin: Model<AdminModel> = mongoose.model<AdminModel>('Admin', AdminSchema);
+const Admin: Model<AdminType> = mongoose.model<AdminType>('Admin', AdminSchema);
 export default Admin;
